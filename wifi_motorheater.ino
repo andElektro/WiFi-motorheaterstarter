@@ -20,8 +20,8 @@
 //Objects
 BlynkTimer timer;
 WidgetRTC rtc;
-User User1 = User("Andreas", 7);
-User User2 = User("Lilo", 8);
+User User1 = User("XXX", 7);
+User User2 = User("XXX", 8);
 Sensor tempSensor;
 WidgetLED User1Led(V1);
 WidgetLED User2Led(V2);
@@ -36,9 +36,9 @@ bool norwegianReset = false;
 
 ///////////////////////////////////////////////
 //WI-FI settings
-char auth[] = "Qmf3AutLfkU-rDQEwNKqsSeJARl9WSXb";
-char ssid[] = "Vardagsrum 2.4G";
-char pass[] = "RJ4YEJMMAEQ";
+char auth[] = "XXX";
+char ssid[] = "XXX";
+char pass[] = "XXX";
 ///////////////////////////////////////////////
 
 ///////////////////////////////////////////////
@@ -85,12 +85,12 @@ BLYNK_WRITE(V11) {
     int m = t.getStartMinute();
     int h = t.getStartHour();
     User1.setStopTime(m, h, tmp);
-    Blynk.notify("Andreas tid uppdaterad");
+    Blynk.notify("XXX tid uppdaterad");
     setUserLedState(User1Led, User1);
   }
   else {
     User1.deleteStopTime();
-    Blynk.notify("Andreas tid borttagen");
+    Blynk.notify("XXX tid borttagen");
     setUserLedState(User1Led, User1);
   }
 }
@@ -109,12 +109,12 @@ BLYNK_WRITE(V12) {
     int m = t.getStartMinute();
     int h = t.getStartHour();
     User2.setStopTime(m, h, tmp);
-    Blynk.notify("Lise-Lottes tid uppdaterad");
+    Blynk.notify("XXX tid uppdaterad");
     setUserLedState(User2Led, User2);
   }
   else {
     User2.deleteStopTime();
-    Blynk.notify("Lise-Lottes tid borttagen");
+    Blynk.notify("XXX tid borttagen");
     setUserLedState(User2Led, User2);
   }
 }
@@ -130,12 +130,12 @@ BLYNK_WRITE(V21) //In Blynkworld BLYNK_WRITE is read
   if (user1ButtonState && !User1.getRelayState()) {
     User1.relayOn();
     setUserLedState(User1Led, User1);
-    Blynk.notify("Andreas motorvärmare har startats");
+    Blynk.notify("XXX motorvärmare har startats");
   }
   else if (!user1ButtonState && User1.getRelayState()) {
     User1.relayOff();
     setUserLedState(User1Led, User1);
-    Blynk.notify("Andreas motorvärmare har stängts av");
+    Blynk.notify("XXX motorvärmare har stängts av");
   }
 }
 
@@ -146,12 +146,12 @@ BLYNK_WRITE(V22)
   if (user2ButtonState && !User2.getRelayState()) {
     User2.relayOn();
     setUserLedState(User2Led, User2);
-    Blynk.notify("Lise-Lottes motorvärmare har startats");
+    Blynk.notify("XXX motorvärmare har startats");
   }
   else if (!user2ButtonState && User2.getRelayState()) {
     User2.relayOff();
     setUserLedState(User2Led, User2);
-    Blynk.notify("Lise-Lottes motorvärmare har stängts av");
+    Blynk.notify("XXX motorvärmare har stängts av");
   }
 }
 ///////////////////////////////////////////////
@@ -194,14 +194,14 @@ void setRelay() {
         User1.relayOn();
         Blynk.virtualWrite(V21, 1);
         setUserLedState(User1Led, User1);
-        Blynk.notify("Andreas motorvärmare har startats");
+        Blynk.notify("XXX motorvärmare har startats");
       }
     }
     else if (User1.checkStopTime()) {
       User1.relayOff();
       Blynk.virtualWrite(V21, 0);
       setUserLedState(User1Led, User1);
-      Blynk.notify("Andreas motorvärmare har stängts av");
+      Blynk.notify("XXX motorvärmare har stängts av");
     }
 
     //User2
@@ -210,14 +210,14 @@ void setRelay() {
         User2.relayOn();
         Blynk.virtualWrite(V22, 1);
         setUserLedState(User2Led, User2);
-        Blynk.notify("Lise-Lottes motorvärmare har startats");
+        Blynk.notify("XXX motorvärmare har startats");
       }
     }
     else if (User2.checkStopTime()) {
       User2.relayOff();
       Blynk.virtualWrite(V22, 0);
       setUserLedState(User2Led, User2);
-      Blynk.notify("Lise-Lottes motorvärmare har stängts av");
+      Blynk.notify("XXX motorvärmare har stängts av");
     }
   }
 }
