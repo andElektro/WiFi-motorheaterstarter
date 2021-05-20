@@ -1,2 +1,2 @@
 # WiFi-motorheaterstarter
-Use Arduino with WiFi, relayboard and tempsensor.
+Use Arduino with WiFi, relayboard, tempsensor and Blynk app.
